@@ -25,7 +25,15 @@ function Chat() {
     try {
       const response = await axios.post('https://stockai-backend-1.onrender.com/analyze_stock', {
         query: input,
+      },
+      { 
+        headers: { 
+          'Content-Type': 'application/json',
+        },
+        // Don't send credentials since your backend now has allow_credentials=False
+        withCredentials: false 
       });
+      
       console.log("Full response object:", response);
       console.log("Response data:", response.data);
       console.log("Response.data.response:", response.data.response);
