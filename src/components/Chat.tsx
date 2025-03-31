@@ -17,7 +17,7 @@ function Chat() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage = { role: 'user', content: input };
+    const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
@@ -38,7 +38,7 @@ function Chat() {
       console.log("Response data:", response.data);
       console.log("Response.data.response:", response.data.response);
       
-      const aiMessage = {
+      const aiMessage: Message = {
         role: 'assistant',
         content: response.data.response, // Assuming backend sends formatted HTML
       };
