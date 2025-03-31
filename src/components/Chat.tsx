@@ -31,7 +31,7 @@ function Chat() {
           'Content-Type': 'application/json',
         },
         // Don't send credentials since your backend now has allow_credentials=False
-        withCredentials: false 
+        withCredentials: true, 
       });
       
       console.log("Full response object:", response);
