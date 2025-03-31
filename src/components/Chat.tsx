@@ -23,7 +23,7 @@ function Chat() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('https://stockai-backend-1.onrender.com/analyze_stock', {
+      const response = await axios.post('http://127.0.0.1:8000/analyze_stock', {
         query: input,
       },
       { 
